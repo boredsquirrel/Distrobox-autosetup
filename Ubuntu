@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sudo apt update -y && sudo apt full-upgrade -y
+sudo apt install -y nala
+printf """
+
+Setting up the fastest Mirror
+
+
+"""
+sudo nala fetch
+
+printf """
+alias apt=nala""" >> ~/.bashrc
