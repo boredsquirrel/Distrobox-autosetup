@@ -12,3 +12,6 @@ sudo nala fetch
 
 printf """
 alias apt=nala""" >> ~/.bashrc
+
+printf """
+alias apt=nala""" | sudo tee -a /root/.bashrc
