@@ -1,0 +1,47 @@
+sudo dnf update -y
+
+while true; do
+    read -p "Do you want to add RPMFusio free? (y/n) " yn
+    case $yn in
+        [Yy]* ) sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm && break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+while true; do
+    read -p "Do you want to add RPMFusio nonfree? (y/n) " yn
+    case $yn in
+        [Yy]* ) sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+while true; do
+    read -p "Do you want to add OpenSuses Signal repo and install it?  (y/n) " yn
+    case $yn in
+        [Yy]* ) wget -O /etc/yum.repos.d/ https://download.opensuse.org/repositories/network:/im:/signal/Fedora_37/network:im:signal.repo && sudo dnf install -y signal && break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+while true; do
+    read -p "Do you want to install the fully working Firefox? (y/n) " yn
+    case $yn in
+        [Yy]* ) sudo dnf install -y firefox ffmpeg && break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+while true; do
+    read -p "Do you want to install Thunderbird working with a PGP hardware key? (y/n) " yn
+    case $yn in
+        [Yy]* ) sudo dnf install -y thunderbird gnupg gpgme && echo "some outdated guide: https://anweshadas.in/how-to-use-yubikey-or-any-gpg-smartcard-in-thunderbird-78/" && break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
