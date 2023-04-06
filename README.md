@@ -44,3 +44,16 @@ distrobox create Ubuntu -i docker.io/library/ubuntu:22.04 && distrobox enter Ubu
 ```
 wget https://github.com/trytomakeyouprivate/Distrobox-autosetup/raw/main/Ubuntu | bash
 ```
+
+3. Install some needed packages
+
+```
+sudo nala install software-properties-common
+```
+
+Android development example
+
+```
+sudo add-apt-repository ppa:maarten-fonville/android-studio
+sudo nala install -y android-studio openjdk-8-jdk-headless
+```
