@@ -55,5 +55,15 @@ Android development example
 
 ```
 sudo add-apt-repository ppa:maarten-fonville/android-studio
-sudo nala install -y android-studio openjdk-8-jdk-headless
+sudo nala install -y android-studio openjdk-8-jdk-headless colord-gtk-utils
+
+wget https://upload.wikimedia.org/wikipedia/commons/9/95/Android_Studio_Icon_3.6.svg -p ~/.local/share/applications/
+
+cat <<EOF > ~/.local/share/applications/Android-Studio.desktop
+[Desktop Entry]
+Type=Application
+Exec=distrobox enter Ubuntu -- sh /opt/android-studio/bin/studio.sh
+Icon=~/.local/share/applications/Android_Studio_Icon_3.6.svg
+Name=Android Studio
+EOF
 ```
